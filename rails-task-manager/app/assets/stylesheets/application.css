@@ -1,0 +1,131 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+body {
+  background-color: #f4f4f4;
+  padding-left: 25px;
+}
+
+a {
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  line-height: 1.25;
+  color: #60abc5;
+}
+
+h2 {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 25px;
+  margin: 25px 0 0 0;
+  color: #333;
+}
+
+h5 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 13px;
+  font-style: italic;
+  color: #bbb;
+  margin: 0 0 25px 0;
+}
+
+p {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  line-height: 1.25;
+  color: #555;
+  margin: 40px 0;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  line-height: 1.25;
+  color: #555;
+  margin: 5px 0;
+}
+
+.title > a {
+  font-weight: bold;
+  color: #444;
+}
+
+.title > a:hover {
+  color: #60abc5;
+}
+
+.deadline {
+  color: #bbb;
+  margin-left: 30px;
+  font-size: 14px;
+}
+
+.menu {
+  font-size: 14px;
+  margin: 0;
+}
+
+.menu > a {
+  font-size: 14px;
+  margin: 0;
+}
+
+.checkbox {
+  display: inline-block;
+  background-clip: content-box;
+  border-radius: 50%;
+  width: 9px;
+  height: 9px;
+  padding: 2px;
+  border: 1px solid #333;
+  margin: 0 15px;
+}
+
+.completed-true a {
+  color: #999;
+}
+
+.completed-false .checkbox {
+  background-color: transparent;
+}
+
+.completed-true .checkbox {
+  background-color: #555;
+}
+
+/* FORM CSS */
+label {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  line-height: 1.25;
+  color: #555;
+}
+
+input, textarea {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  line-height: 1.25;
+  color: #000;
+}
+
+#task_description {
+  min-width: 400px;
+  min-height: 300px;
+}

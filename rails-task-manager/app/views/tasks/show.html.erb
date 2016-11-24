@@ -1,0 +1,13 @@
+<h2 class='completed-<%= @task.completed %>'>
+  <%= @task.title %>
+  <%= link_to complete_path(@task), method: :patch do %>
+    <div class='checkbox'></div>
+  <% end %>
+</h2>
+<h5><%= @task.deadline %></h5>
+
+<p class="menu"><%= link_to "edit", edit_task_path(@task) %> | <%= link_to "delete", task_path(@task), method: :delete %></p>
+
+<p><%= @task.description %></p>
+
+<%= link_to "< Back to tasks", root_path %>
