@@ -5176,3 +5176,67 @@ Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb
 Started GET "/assets/doses.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-11-25 11:12:25 +0100
 Started GET "/assets/ingredients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-11-25 11:12:25 +0100
 Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-11-25 11:12:25 +0100
+DEPRECATION WARNING: ActiveRecord::Base.raise_in_transactional_callbacks= is deprecated, has no effect and will be removed without replacement. (called from block in _load_from at config/puma.rb:14)
+DEPRECATION WARNING: ActiveRecord::Base.raise_in_transactional_callbacks= is deprecated, has no effect and will be removed without replacement. (called from block in _load_from at config/puma.rb:14)
+Started GET "/cocktails/new" for 127.0.0.1 at 2016-11-25 11:25:04 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CocktailsController#new as HTML
+  Rendering cocktails/new.html.erb within layouts/application
+  Rendered cocktails/_form.html.erb (35.5ms)
+  Rendered cocktails/new.html.erb within layouts/application (37.2ms)
+Completed 200 OK in 427ms (Views: 406.1ms | ActiveRecord: 3.2ms)
+
+
+Started POST "/cocktails" for 127.0.0.1 at 2016-11-25 11:25:09 +0100
+Processing by CocktailsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/TGbuXRwI+BcDzmFKCf8nk/DAXNVqyER4XYnq4b4hH/LHH/3Qo3oNN7RO/e2ukduoVpS+et/rggHzlf90P3eow==", "cocktail"=>{"name"=>"what"}, "commit"=>"Create Cocktail"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCocktail Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "cocktails" WHERE "cocktails"."name" = $1 LIMIT $2[0m  [["name", "what"], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "cocktails" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "what"], ["created_at", 2016-11-25 10:25:09 UTC], ["updated_at", 2016-11-25 10:25:09 UTC]]
+  [1m[35m (4.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/cocktails/26
+Completed 302 Found in 19ms (ActiveRecord: 6.0ms)
+
+
+Started GET "/cocktails/26" for 127.0.0.1 at 2016-11-25 11:25:09 +0100
+Processing by CocktailsController#show as HTML
+  Parameters: {"id"=>"26"}
+  [1m[36mCocktail Load (0.2ms)[0m  [1m[34mSELECT  "cocktails".* FROM "cocktails" WHERE "cocktails"."id" = $1 LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+  Rendering cocktails/show.html.erb within layouts/application
+  [1m[36mDose Load (0.4ms)[0m  [1m[34mSELECT "doses".* FROM "doses" WHERE "doses"."cocktail_id" = $1[0m  [["cocktail_id", 26]]
+  [1m[36mIngredient Load (0.4ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  Rendered cocktails/show.html.erb within layouts/application (27.4ms)
+Completed 200 OK in 79ms (Views: 60.8ms | ActiveRecord: 5.8ms)
+
+
+DEPRECATION WARNING: ActiveRecord::Base.raise_in_transactional_callbacks= is deprecated, has no effect and will be removed without replacement. (called from block in _load_from at config/puma.rb:14)
+DEPRECATION WARNING: ActiveRecord::Base.raise_in_transactional_callbacks= is deprecated, has no effect and will be removed without replacement. (called from block in _load_from at config/puma.rb:14)
+Started GET "/cocktails/26" for 127.0.0.1 at 2016-11-25 11:27:49 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CocktailsController#show as HTML
+  Parameters: {"id"=>"26"}
+  [1m[36mCocktail Load (0.3ms)[0m  [1m[34mSELECT  "cocktails".* FROM "cocktails" WHERE "cocktails"."id" = $1 LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+  Rendering cocktails/show.html.erb within layouts/application
+  [1m[36mDose Load (0.3ms)[0m  [1m[34mSELECT "doses".* FROM "doses" WHERE "doses"."cocktail_id" = $1[0m  [["cocktail_id", 26]]
+  [1m[36mIngredient Load (0.8ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  Rendered cocktails/show.html.erb within layouts/application (65.2ms)
+Completed 200 OK in 2720ms (Views: 2679.6ms | ActiveRecord: 12.0ms)
+
+
+Started GET "/assets/application.self-c16a1ffaedf55a1282c6ac2cf764b9cbd854b2eae3b4acb35a722b69fc996ee9.css?body=1" for 127.0.0.1 at 2016-11-25 11:27:52 +0100
+Started GET "/" for 127.0.0.1 at 2016-11-25 11:27:58 +0100
+Processing by CocktailsController#index as HTML
+  Rendering cocktails/index.html.erb within layouts/application
+  [1m[36mCocktail Load (0.3ms)[0m  [1m[34mSELECT "cocktails".* FROM "cocktails"[0m
+  Rendered cocktails/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 40ms (Views: 39.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-11-25 11:27:58 +0100
+Processing by CocktailsController#index as HTML
+  Rendering cocktails/index.html.erb within layouts/application
+  [1m[36mCocktail Load (0.3ms)[0m  [1m[34mSELECT "cocktails".* FROM "cocktails"[0m
+  Rendered cocktails/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 40ms (Views: 38.5ms | ActiveRecord: 0.3ms)
+
+

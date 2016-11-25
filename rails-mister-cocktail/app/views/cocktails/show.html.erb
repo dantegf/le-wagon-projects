@@ -25,7 +25,7 @@
           </ul>
         <% end %>
 
-        <%= f.input :description, placeholder: "2 teaspoons" %>
+        <%= f.input :description, placeholder: "put lots of vodka in dat shizzle" %>
         <%= f.input :ingredient_id, collection: Ingredient.all, prompt: "Choose one" %>
 
         <%= f.submit "Add dose", class: "btn btn-primary"%>
